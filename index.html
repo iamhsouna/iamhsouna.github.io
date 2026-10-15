@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hsouna Zinoubi — Freelance IT Developer</title>
+<meta name="description" content="Hsouna Zinoubi — Freelance IT Developer. Linux systems, CLI tooling and AI infrastructure. Open-source projects in Go, Rust and Python.">
+<style>
+  :root {
+    --ink: #12181f;
+    --muted: #5b6672;
+    --line: #e2e7ec;
+    --accent: #0d7ea8;
+    --accent-soft: #eaf6fb;
+    --bg: #f6f8fa;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.62 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 32px 16px 64px;
+  }
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 12px 32px -12px rgba(16,24,40,.12);
+  }
+  header {
+    background: linear-gradient(135deg, #0e1726 0%, #123047 60%, #0d7ea8 200%);
+    color: #fff;
+    padding: 34px 34px 28px;
+  }
+  header h1 { margin: 0; font-size: 30px; letter-spacing: -.4px; line-height: 1.15; }
+  header .role { margin: 8px 0 0; color: #cfe9f6; font-size: 16px; font-weight: 600; }
+  header .avail { margin: 14px 0 0; font-size: 14px; color: #e7f4fb; }
+  header .avail strong { color: #fff; }
+  .contact {
+    margin-top: 18px; padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,.18);
+    display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px;
+  }
+  .contact a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.4); }
+  .contact a:hover { border-bottom-color: #fff; }
+  main { padding: 30px 34px 36px; }
+  section + section { margin-top: 30px; }
+  h2 {
+    font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 14px; font-weight: 700;
+  }
+  h3 { font-size: 16px; margin: 0; }
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+  .entry + .entry { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .entry-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; }
+  .entry-head .meta { color: var(--muted); font-size: 14px; white-space: nowrap; }
+  .where { color: var(--muted); font-size: 14px; margin: 2px 0 10px; }
+  ul { margin: 0; padding-left: 19px; }
+  li { margin-bottom: 5px; }
+  li:last-child { margin-bottom: 0; }
+  a { color: var(--accent); }
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .project {
+    border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; background: #fcfdfe;
+  }
+  .project h3 { font-size: 15px; }
+  .project .stack {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .6px;
+    text-transform: uppercase; color: var(--accent); background: var(--accent-soft);
+    border-radius: 999px; padding: 2px 9px; margin: 4px 0 7px;
+  }
+  .project p { font-size: 14px; color: #333c45; margin: 0; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill {
+    font-size: 13.5px; background: #f2f5f8; border: 1px solid var(--line);
+    border-radius: 999px; padding: 4px 12px; color: #253039;
+  }
+  .langs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+  .langs div { display: flex; justify-content: space-between; border-bottom: 1px dotted var(--line); padding-bottom: 4px; font-size: 14.5px; }
+  .langs span:last-child { color: var(--muted); }
+  .note {
+    font-size: 13.5px; color: var(--muted); background: #f7f9fb;
+    border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+    padding: 10px 14px; margin-top: 14px;
+  }
+  .print-btn {
+    position: fixed; right: 20px; bottom: 20px; z-index: 5;
+    background: #0e1726; color: #fff; border: 0; border-radius: 999px;
+    padding: 11px 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+    box-shadow: 0 8px 24px -8px rgba(14,23,38,.6);
+  }
+  .print-btn:hover { background: #0d7ea8; }
+  footer { padding: 0 34px 30px; color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 10px 48px; }
+    header, main, footer { padding-left: 20px; padding-right: 20px; }
+    .projects, .langs { grid-template-columns: 1fr; }
+    header h1 { font-size: 25px; }
+  }
+
+  @media print {
+    :root { --bg: #fff; }
+    body { background: #fff; padding: 0; font-size: 11.5pt; }
+    .page { border: 0; border-radius: 0; box-shadow: none; max-width: none; }
+    header { background: #0e1726 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18mm 14mm 8mm; }
+    main { padding: 8mm 14mm 4mm; }
+    footer { padding: 0 14mm 8mm; }
+    .print-btn { display: none; }
+    section + section { margin-top: 6mm; }
+    .entry + .entry { margin-top: 4.5mm; padding-top: 4.5mm; }
+    a { color: var(--ink); text-decoration: none; }
+    .project { break-inside: avoid; }
+    .entry { break-inside: avoid; }
+    .skills, .projects { gap: 4px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <h1>Hsouna Zinoubi</h1>
+    <p class="role">Freelance IT Developer — Linux Systems · CLI Tooling · AI Infrastructure</p>
+    <p class="avail"><strong>Open to work:</strong> EU · United Kingdom · Canada · Australia · Gulf. On-site, hybrid or remote.</p>
+    <div class="contact">
+      <span>Sidi Bouzid, Tunisia</span>
+      <a href="mailto:iamhsouna@gmail.com">iamhsouna@gmail.com</a>
+      <a href="https://github.com/iamhsouna">github.com/iamhsouna</a>
+      <a href="https://www.linkedin.com/in/hsouna-zinoubi">linkedin.com/in/hsouna-zinoubi</a>
+      <a href="https://huggingface.co/iamhsouna">huggingface.co/iamhsouna</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Profile</h2>
+      <p>Self-taught developer working across Linux systems, command-line tooling and local AI infrastructure. I build and maintain public open-source software in Go, Rust and Python, and I have run an online business end to end.</p>
+      <p>My work is practical: diagnosing Linux and GPU environments, shipping working tools, and reading systems carefully enough to fix them. The projects below are public and runnable — they are the clearest evidence of what I can do.</p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Freelance IT Developer</h3>
+          <span class="meta">2019 – Present</span>
+        </div>
+        <p class="where">Self-employed · Sidi Bouzid, Tunisia · Remote</p>
+        <ul>
+          <li>Deliver web and application development, server administration, deployment and IT support for clients.</li>
+          <li>Build and maintain open-source developer tooling: a Linux/GPU system monitor (Go), a Hugging Face downloader (Rust), and terminal/application utilities (Python).</li>
+          <li>Convert and package large language models to GGUF for local inference, published on Hugging Face.</li>
+          <li>Run and troubleshoot local AI infrastructure: llama.cpp, vLLM, Docker, Proxmox, GPU memory and model-compatibility issues.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Founder &amp; CEO</h3>
+          <span class="meta">2021 – Present</span>
+        </div>
+        <p class="where">TANIT TRAVEL · Dubai, United Arab Emirates · Operations currently on hold</p>
+        <ul>
+          <li>Founded and ran an online travel services business serving UAE and GCC customers.</li>
+          <li>Tourist visa processing for the UAE and GCC countries, flight ticketing and hotel reservations.</li>
+          <li>Owned the full operation: customer service, supplier relationships, web presence and order handling.</li>
+          <li>Business placed on hold due to regional circumstances.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+      <div class="projects">
+
+        <div class="project">
+          <h3>lintop</h3>
+          <div class="stack">Go</div>
+          <p>Real-time Linux terminal system monitor with NVIDIA, AMD and Intel GPU support. An htop-style view that also tracks GPU load, memory and temperature.</p>
+        </div>
+
+        <div class="project">
+          <h3>hfd</h3>
+          <div class="stack">Rust</div>
+          <p>Fast Hugging Face model and dataset downloader: multi-connection, resumable transfers, SHA-256 integrity verification and a terminal dashboard.</p>
+        </div>
+
+        <div class="project">
+          <h3>Bouzid FM</h3>
+          <div class="stack">Python</div>
+          <p>Self-hosted Tunisian AI radio station. Generates Arabic content, synthesises voice, mixes station imaging and broadcasts through AzuraCast from one terminal control panel.</p>
+        </div>
+
+        <div class="project">
+          <h3>lyra</h3>
+          <div class="stack">Rust</div>
+          <p>Local song generation studio with a terminal UI and a web UI sharing one core: presets, validation and a GPU-backed generation runner.</p>
+        </div>
+
+        <div class="project">
+          <h3>agentclick</h3>
+          <div class="stack">Python</div>
+          <p>Wraps any command and plays typing-style audio as output streams. Cross-platform, with install scripts and audio fallback handling.</p>
+        </div>
+
+        <div class="project">
+          <h3>AppGrab</h3>
+          <div class="stack">Python</div>
+          <p>Command-line search and download workflow for Android APK and iOS IPA packages, with configuration and installer tooling.</p>
+        </div>
+
+        <div class="project">
+          <h3>GGUF model conversion</h3>
+          <div class="stack">Hugging Face</div>
+          <p>Credited converter of published GGUF model variants, including quantisation selection, model metadata and local inference documentation.</p>
+        </div>
+
+      </div>
+      <p class="note">All projects are public: <a href="https://github.com/iamhsouna">github.com/iamhsouna</a> and <a href="https://huggingface.co/iamhsouna">huggingface.co/iamhsouna</a>. Some were built using AI-assisted coding workflows.</p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <span class="skill">Linux</span>
+        <span class="skill">Bash</span>
+        <span class="skill">Python</span>
+        <span class="skill">PHP</span>
+        <span class="skill">Go</span>
+        <span class="skill">Rust</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Proxmox</span>
+        <span class="skill">Git</span>
+        <span class="skill">Server administration</span>
+        <span class="skill">Command-line tooling</span>
+        <span class="skill">AI-assisted development</span>
+        <span class="skill">llama.cpp</span>
+        <span class="skill">vLLM</span>
+        <span class="skill">Hugging Face</span>
+        <span class="skill">GGUF / model quantisation</span>
+        <span class="skill">GPU computing</span>
+        <span class="skill">Troubleshooting</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <div class="langs">
+        <div><span>Arabic</span><span>Native</span></div>
+        <div><span>French</span><span>Professional working</span></div>
+        <div><span>English</span><span>Full professional</span></div>
+        <div><span>German</span><span>Elementary (learning)</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Lycée Mixte Sidi Bouzid</h3>
+          <span class="meta">2009</span>
+        </div>
+        <p class="where">Secondary education — Baccalaureate not completed</p>
+        <p>Studied for the Baccalaureate; the final examination was not passed, so no diploma was awarded. Technical skills are self-taught through hands-on work and public open-source projects.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Practical Notes</h2>
+      <ul>
+        <li><strong>Work authorisation:</strong> based in Tunisia; requires a work permit and visa sponsorship.</li>
+        <li><strong>Availability:</strong> immediate, subject to visa processing.</li>
+        <li><strong>References:</strong> available on request.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    Hsouna Zinoubi · <a href="https://github.com/iamhsouna">github.com/iamhsouna</a>
+  </footer>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">Save as PDF</button>
+
+</body>
+</html>
